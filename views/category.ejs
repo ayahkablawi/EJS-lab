@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= category %> Menu</title>
+</head>
+<body>
+  <%- include('./partials/nav') %>
+  <h1><%= category %> Menu</h1>
+
+  <% menuItems.forEach(item => { %>
+    <h3><%= item.name %> <% if (item.rating === 5) { %> ⭐ <% } %></h3>
+    <p>$<%= item.price.toFixed(2) %></p>
+    <p><%= item.details %></p>
+  <% }); %>
+</body>
+</html>
